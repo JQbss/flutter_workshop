@@ -1,30 +1,58 @@
-// This is a basic Flutter widget test.
-//
-// To perform an interaction with a widget in your test, use the WidgetTester
-// utility in the flutter_test package. For example, you can send tap and scroll
-// gestures. You can also use WidgetTester to find child widgets in the widget
-// tree, read text, and verify that the values of widget properties are correct.
-
-import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:flutter_workshop/app.dart';
+import 'package:flutter_workshop/data/post.dart';
+import 'package:flutter_workshop/data/posts_repository.dart';
+import 'package:flutter_workshop/state/posts_bloc.dart';
+import 'package:flutter_workshop/state/posts_event.dart';
+import 'package:flutter_workshop/state/posts_state.dart';
 
-import 'package:flutter_workshop/main.dart';
+class _FakeRepository implements PostsRepository {
+  _FakeRepository({this.shouldFail = false});
+
+  final bool shouldFail;
+
+  @override
+  Future<List<Post>> fetchPosts() async {
+    if (shouldFail) throw const PostsException('No network');
+    return const [Post(id: 1, userId: 1, title: 'Title', body: 'Body')];
+  }
+
+  @override
+  Future<Post> fetchPost(int id) async => throw UnimplementedError();
+}
 
 void main() {
-  testWidgets('Counter increments smoke test', (WidgetTester tester) async {
-    // Build our app and trigger a frame.
-    await tester.pumpWidget(const MyApp());
+  testWidgets('App starts on the table of contents', (tester) async {
+    await tester.pumpWidget(const WorkshopApp());
 
-    // Verify that our counter starts at 0.
-    expect(find.text('0'), findsOneWidget);
-    expect(find.text('1'), findsNothing);
+    expect(find.text('Flutter Workshop'), findsOneWidget);
+    expect(find.text('1. Basics'), findsOneWidget);
+    expect(find.text('Task 1'), findsOneWidget);
+  });
 
-    // Tap the '+' icon and trigger a frame.
-    await tester.tap(find.byIcon(Icons.add));
-    await tester.pump();
+  test('PostsBloc emits Loading, then Loaded', () async {
+    final bloc = PostsBloc(_FakeRepository());
 
-    // Verify that our counter has incremented.
-    expect(find.text('0'), findsNothing);
-    expect(find.text('1'), findsOneWidget);
+    final states = expectLater(
+      bloc.stream,
+      emitsInOrder([isA<PostsLoading>(), isA<PostsLoaded>()]),
+    );
+    bloc.add(const PostsRequested());
+
+    await states;
+    await bloc.close();
+  });
+
+  test('PostsBloc emits Failure when the repository throws', () async {
+    final bloc = PostsBloc(_FakeRepository(shouldFail: true));
+
+    final states = expectLater(
+      bloc.stream,
+      emitsInOrder([isA<PostsLoading>(), isA<PostsFailure>()]),
+    );
+    bloc.add(const PostsRequested());
+
+    await states;
+    await bloc.close();
   });
 }
