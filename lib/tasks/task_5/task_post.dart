@@ -5,18 +5,17 @@ part 'task_post.g.dart';
 
 /// TASK 5
 ///
-/// The server also returns a "body" field, but the model does not have it, so it is lost.
+/// Compare the two blocks on the task screen: the server sends a "body",
+/// but it never makes it into the object. Make it show up there.
 ///
-/// 1. Add a field to the model: required String body
-/// 2. Regenerate the code in the terminal:
-///      fvm dart run build_runner build
-/// 3. Do a hot restart and check on the task screen whether body showed up.
+/// Changing a model takes more than editing this file.
+/// Need a reminder? See lib/data/post.dart.
 @freezed
 abstract class TaskPost with _$TaskPost {
   const factory TaskPost({
     required int id,
     required String title,
-    // TODO(task 5): add the body field.
+    // TODO(task 5): something the server sends is missing here.
   }) = _TaskPost;
 
   factory TaskPost.fromJson(Map<String, dynamic> json) =>

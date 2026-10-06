@@ -48,17 +48,17 @@ Each row is a screen in the app and the file with the code behind it.
 
 ## Tasks
 
-Each task is a single change that is visible on screen right away. Look for `TODO(task N)` comments in the code. Every task screen has a **Solution** button in the top right corner, and the solution code lives in the `solution/` subdirectory.
+Each task starts from something that is broken or missing on screen. The comment at the top of the file describes the expected behavior, and `TODO(task N)` marks where to start. Every task screen has a **Solution** button in the top right corner, and the solution code lives in the `solution/` subdirectory.
 
-| # | File | What to do |
+| # | File | Goal |
 |---|---|---|
 | 1 | `lib/tasks/task_1/task_1_screen.dart` | Change the text and color, add a second `Text`. |
-| 2 | `lib/tasks/task_2/task_2_screen.dart` | Increase the like counter inside `setState`. |
-| 3 | `lib/tasks/task_3/task_3_screen.dart` | Replace `Column` with `ListView.builder`. |
-| 4 | `lib/router/app_router.dart`, `lib/tasks/task_4/task_4_screen.dart` | Add a `posts/:id` route and navigate to it with `push`. |
-| 5 | `lib/tasks/task_5/task_post.dart` | Add a `body` field to the model and run `build_runner`. |
-| 6 | `lib/tasks/task_6/task_6_bloc.dart` | Complete the handler: `Loading`, fetch, `Loaded`. |
-| 7 | `lib/tasks/task_7/task_7_screen.dart` | Show a message and a retry button for the failure state. |
+| 2 | `lib/tasks/task_2/task_2_screen.dart` | Tapping the heart increases the like counter. |
+| 3 | `lib/tasks/task_3/task_3_screen.dart` | All 30 posts are shown in a scrollable list. |
+| 4 | `lib/router/app_router.dart`, `lib/tasks/task_4/task_4_screen.dart` | Tapping a post opens its details screen under its own address. |
+| 5 | `lib/tasks/task_5/task_post.dart` | The `body` sent by the server shows up in the object. |
+| 6 | `lib/tasks/task_6/task_6_bloc.dart` | The screen shows a spinner, then the fetched posts. |
+| 7 | `lib/tasks/task_7/task_7_screen.dart` | The failure state shows what went wrong and a way to retry. |
 
 The tasks are independent of each other.
 

@@ -5,11 +5,12 @@ import 'package:flutter_workshop/common/step_scaffold.dart';
 
 /// TASK 4
 ///
-/// Tapping a post should open the details screen, e.g. /tasks/4/posts/3.
+/// Tapping a post does nothing. It should open that post's details screen
+/// under its own address, e.g. /tasks/4/posts/3, with a working back arrow.
 /// The details screen is ready: Task4PostScreen in task_4_post_screen.dart.
 ///
-/// 1. In lib/router/app_router.dart add the 'posts/:id' route (marked spot).
-/// 2. Here, in onTap, navigate to it with context.push.
+/// Two places need a change: this file and lib/router/app_router.dart.
+/// Need a reminder? See how the /routing/items/:id route is set up and opened.
 class Task4Screen extends StatelessWidget {
   const Task4Screen({super.key});
 
@@ -26,8 +27,7 @@ class Task4Screen extends StatelessWidget {
             title: post.title,
             body: post.body,
             onTap: () {
-              // TODO(task 4): context.push('/tasks/4/posts/${index + 1}');
-              // You will need to import package:go_router/go_router.dart.
+              // TODO(task 4): open the details screen of this post.
             },
           );
         },

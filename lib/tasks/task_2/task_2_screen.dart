@@ -3,8 +3,10 @@ import 'package:flutter_workshop/common/step_scaffold.dart';
 
 /// TASK 2
 ///
-/// Make tapping the heart increase the like counter by 1
-/// and make the new value show up on screen right away.
+/// Tapping the heart does nothing. It should increase the like counter,
+/// and the new number should show up on screen right away.
+///
+/// Need a reminder? See lib/basics/stateful_screen.dart.
 class Task2Screen extends StatefulWidget {
   const Task2Screen({super.key});
 
@@ -16,8 +18,7 @@ class _Task2ScreenState extends State<Task2Screen> {
   final int _likes = 0;
 
   void _like() {
-    // TODO(task 2): increase _likes by 1 inside setState.
-    // Hint: the _likes field can no longer be final then.
+    // TODO(task 2): make the like count go up.
   }
 
   @override

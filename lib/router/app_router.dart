@@ -136,8 +136,7 @@ final appRouter = GoRouter(
           path: 'tasks/4',
           builder: (context, state) => const Task4Screen(),
           routes: [
-            // TODO(task 4): add a 'posts/:id' route here that opens Task4PostScreen.
-            // See the solution below, or 'routing/items/:id' above, for the pattern.
+            // TODO(task 4): the post details screen needs a route here.
             GoRoute(
               path: 'solution',
               builder: (context, state) => const Task4SolutionScreen(),

@@ -9,11 +9,10 @@ import 'package:flutter_workshop/state/posts_state.dart';
 
 /// TASK 7
 ///
-/// After pressing "Simulate failure" the screen goes blank: the PostsFailure state
-/// has no view of its own. Show the error message (state.message)
-/// and a "Try again" button that sends a PostsRequested event.
+/// Press "Simulate failure": the screen goes blank. The user should see
+/// what went wrong and have a way to try again from there.
 ///
-/// To start, delete the PostsFailure line and see what the compiler says.
+/// To start, delete the marked line below and see what the compiler says.
 class Task7Screen extends StatelessWidget {
   const Task7Screen({super.key});
 
@@ -71,7 +70,7 @@ class _Task7View extends StatelessWidget {
                     body: posts[index].body,
                   ),
                 ),
-                // TODO(task 7): replace the empty widget with a message and a button.
+                // TODO(task 7): this state shows nothing.
                 PostsFailure() => const SizedBox.shrink(),
               };
             },

@@ -6,7 +6,9 @@ import 'package:flutter_workshop/common/step_scaffold.dart';
 /// TASK 3
 ///
 /// The screen shows only 3 posts typed in by hand, while samplePosts has 30.
-/// Replace the Column with a ListView.builder that displays all of them.
+/// Show all of them in a scrollable list, without typing them in one by one.
+///
+/// Need a reminder? See lib/basics/list_screen.dart.
 class Task3Screen extends StatelessWidget {
   const Task3Screen({super.key});
 
@@ -15,9 +17,7 @@ class Task3Screen extends StatelessWidget {
     return StepScaffold(
       title: 'Task 3',
       solutionPath: '/tasks/3/solution',
-      // TODO(task 3): replace the Column with a ListView.builder.
-      // You need itemCount (samplePosts.length) and an itemBuilder
-      // that returns a PostTile for the given index.
+      // TODO(task 3): show every post from samplePosts.
       child: Column(
         children: [
           PostTile(title: samplePosts[0].title, body: samplePosts[0].body),
