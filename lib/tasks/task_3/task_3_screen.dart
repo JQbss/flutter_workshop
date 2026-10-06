@@ -3,7 +3,7 @@ import 'package:flutter_workshop/common/post_tile.dart';
 import 'package:flutter_workshop/common/sample_posts.dart';
 import 'package:flutter_workshop/common/step_scaffold.dart';
 
-/// TASK 3 (4 min)
+/// TASK 3
 ///
 /// The screen shows only 3 posts typed in by hand, while samplePosts has 30.
 /// Replace the Column with a ListView.builder that displays all of them.

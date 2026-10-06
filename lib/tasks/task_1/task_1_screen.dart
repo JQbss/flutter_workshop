@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_workshop/common/step_scaffold.dart';
 
-/// TASK 1 (3 min)
+/// TASK 1
 ///
 /// 1. Change the greeting text to your own.
 /// 2. Change the text color (e.g. Colors.teal).

@@ -3,7 +3,7 @@ import 'package:flutter_workshop/common/post_tile.dart';
 import 'package:flutter_workshop/common/sample_posts.dart';
 import 'package:flutter_workshop/common/step_scaffold.dart';
 
-/// TASK 4 (5 min)
+/// TASK 4
 ///
 /// Tapping a post should open the details screen, e.g. /tasks/4/posts/3.
 /// The details screen is ready: Task4PostScreen in task_4_post_screen.dart.

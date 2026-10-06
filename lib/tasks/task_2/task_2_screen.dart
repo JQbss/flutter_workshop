@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_workshop/common/step_scaffold.dart';
 
-/// TASK 2 (4 min)
+/// TASK 2
 ///
 /// Make tapping the heart increase the like counter by 1
 /// and make the new value show up on screen right away.

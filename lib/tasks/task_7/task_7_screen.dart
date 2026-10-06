@@ -7,7 +7,7 @@ import 'package:flutter_workshop/state/posts_bloc.dart';
 import 'package:flutter_workshop/state/posts_event.dart';
 import 'package:flutter_workshop/state/posts_state.dart';
 
-/// TASK 7 (4 min)
+/// TASK 7
 ///
 /// After pressing "Simulate failure" the screen goes blank: the PostsFailure state
 /// has no view of its own. Show the error message (state.message)

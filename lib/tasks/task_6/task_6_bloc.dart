@@ -3,7 +3,7 @@ import 'package:flutter_workshop/data/posts_repository.dart';
 import 'package:flutter_workshop/state/posts_event.dart';
 import 'package:flutter_workshop/state/posts_state.dart';
 
-/// TASK 6 (5 min)
+/// TASK 6
 ///
 /// The "Fetch posts" button sends a PostsRequested event, but the state never changes,
 /// because the handler does not emit anything. Complete it.

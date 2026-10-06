@@ -3,7 +3,7 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 part 'task_post.freezed.dart';
 part 'task_post.g.dart';
 
-/// TASK 5 (5 min)
+/// TASK 5
 ///
 /// The server also returns a "body" field, but the model does not have it, so it is lost.
 ///
